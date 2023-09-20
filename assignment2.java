@@ -19,7 +19,6 @@ public class assignment2 {
         
         return res;
     }
-
     public static int[] average(int arr[])
     {
         int res[]= new int[arr.length];
@@ -37,7 +36,6 @@ public class assignment2 {
 
         return res;
     }
-
     public static int[] odd_even (int arr[]){
         int res[]=new int[2];
         int sum_even=0;
@@ -54,10 +52,9 @@ public class assignment2 {
 
         return res;
     }
-    
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Random rn = new Random(0);
+        Random rn = new Random();
         
         int size = 1;
         System.out.println("Enter the size of the array");
@@ -67,13 +64,37 @@ public class assignment2 {
             int rand = rn.nextInt(0,100);
             arr[i] = rand;
         }
-        System.out.println();
+    
+        System.out.println("Array is: ");
         for(int i = 0; i<size; i++){
             System.out.println(arr[i]);
-            
         }
-        System.out.println("max is "+ max_min(arr)[0]+" min is "+max_min(arr)[1]);
-        
+       int choice = 5;
+       while(choice != 0){
+        System.out.println("Enter Your Choice");
+        System.out.println("1. Find the max and min of the array");
+        System.out.println("2. Find the differences from the average");
+        System.out.println("3. Find the sum of odd and even integers");
+        System.out.println("0. Quit");
+        choice = scan.nextInt();
+        if(choice == 1){
+            System.out.println("The max of the array is "+max_min(arr)[0]);
+            System.out.println("The min of the array is "+ max_min(arr)[1]);
+
+        }
+        if(choice==2){
+            System.out.println("differences of average is:");
+        for(int i=0;i<arr.length;i++)
+            System.out.print(average(arr)[i]+" ");
+    }
+    if(choice == 3){
+        System.out.println("Sum of even indices are: "+ odd_even(arr)[0]);
+        System.out.println("Sum of odd indices are: "+ odd_even(arr)[1]);
+    }
+    
+    if(choice == 0)
+    break;
+       }
 
     }
 }
