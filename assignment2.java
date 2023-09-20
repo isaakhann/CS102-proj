@@ -19,6 +19,25 @@ public class assignment2 {
         
         return res;
     }
+
+    public static int[] average(int arr[])
+    {
+        int res[]= new int[arr.length];
+        int sum = 0;
+        for ( int i = 0;i < arr.length; i++)
+        {
+        sum += arr[i];
+        }
+        int avg = sum / arr.length;
+
+        for ( int i = 0; i < arr.length; i++)
+        {
+        res[i] = arr[i] - avg;
+        }
+
+        return res;
+    }
+    
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Random rn = new Random(0);
